@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VortexGrid – Free Fire Stylish Names & Gaming Hub</title>
+  <meta name="description" content="Generate stylish Free Fire nicknames and pro gaming tools.">
+  <style>
+    body { background: #0d0d0d; color: #f0f0f0; font-family: sans-serif; text-align: center; padding: 50px 20px; }
+    .card { background: #141414; border: 1px solid #ff2d55; border-radius: 12px; padding: 30px; max-width: 500px; margin: 30px auto; }
+    input { width: 90%; padding: 12px; background: #111; border: 1px solid #333; color: #fff; border-radius: 6px; margin-bottom: 15px; outline: none; }
+    button { width: 95%; padding: 12px; background: #ff2d55; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; text-transform: uppercase; }
+    .result-item { display: flex; justify-content: space-between; align-items: center; background: #1c1c1c; padding: 10px; margin-top: 10px; border-radius: 6px; }
+    .copy-btn { background: transparent; border: 1px solid #ff2d55; color: #ff2d55; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>VORTEX<span style="color:#00f5ff">GRID</span></h1>
+  <p>Ultimate Gaming Hub & SEO Project</p>
+  
+  <div class="card">
+    <h3>⚡ Free Fire Stylish Nickname Generator</h3>
+    <input type="text" id="nameIn" value="NOX" placeholder="Type name...">
+    <button onclick="gen()">Generate Styles</button>
+    <div id="res" style="margin-top:15px;"></div>
+  </div>
+
+  <script>
+    function gen() {
+      let val = document.getElementById('nameIn').value.trim();
+      let res = document.getElementById('res');
+      if(!val) return;
+      let styles = [`☠️ ${val.toUpperCase()} ☠️`, `〆${val}精神`, `亗 ꜱᴇɴɪᴏʀ • ${val} 亗`, `×͜× ${val} ×͜×`];
+      res.innerHTML = "";
+      styles.forEach(s => {
+        res.innerHTML += `<div class="result-item"><span>${s}</span><button class="copy-btn" onclick="navigator.clipboard.writeText('${s}');alert('Copied!')">Copy</button></div>`;
+      });
+    }
+    window.onload = gen;
+  </script>
+</body>
+</html>
